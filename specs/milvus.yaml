@@ -1,0 +1,22 @@
+spec:
+    containers:
+    - name: "milvus"
+      image: "${org_name}-${acct_name}.registry.snowflakecomputing.com/milvus_demo/public/milvus_repo/milvus"
+      env:
+        ETCD_USE_EMBED: true
+        COMMON_STORAGETYPE: "local"
+      command:
+        - /milvus/bin/milvus
+        - run
+        - standalone
+    endpoints:
+    - name: "milvus"
+      port: 19530
+      public: true
+    - name: "health"
+      port: 9091
+      public: true
+    - name: "etcd"
+      port: 2379
+      public: true
+

@@ -1,0 +1,6 @@
+FROM milvusdb/milvus:v2.4.0-rc.1
+
+
+EXPOSE 19530
+EXPOSE 9091
+EXPOSE 2379
